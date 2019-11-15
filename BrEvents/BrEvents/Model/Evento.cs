@@ -9,12 +9,12 @@ namespace BrEvents.Model
     {
         [PrimaryKey, AutoIncrement]
         public int IdEvento { get; set; }
-        public int Descricao { get; set; }
-        public int DataInicio { get; set; }
-        public int DataFim { get; set; }
-        public int Custo { get; set; }
-        public int Local { get; set; }
-        public int Endereco { get; set; }
+        public string Descricao { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
+        public float Custo { get; set; }
+        public string Local { get; set; }
+        public string Endereco { get; set; }
         public int CapacidadeMaxima { get; set; }
     }
 }

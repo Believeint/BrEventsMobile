@@ -9,11 +9,11 @@ namespace BrEvents.Model
     {
         [PrimaryKey, AutoIncrement]
         public int IdUsuario { get; set; }
-        public int Senha { get; set; }
+        public string Senha { get; set; }
         public int Privilegio { get; set; }
-        public int nome { get; set; }
-        public int Sobrenome { get; set; }
-        public int email { get; set; }
-        public int contato { get; set; }
+        public string nome { get; set; }
+        public string Sobrenome { get; set; }
+        public string email { get; set; }
+        public string contato { get; set; }
     }
 }
