@@ -4,9 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrEvents.MainPage" NavigationPage.HasNavigationBar="False" NavigationPage.HasBackButton="False">
-
-    <ContentPage.Content>
+             x:Class="BrEvents.View.Login" NavigationPage.HasNavigationBar="False">
+   
         <Grid BackgroundColor="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
@@ -32,14 +31,14 @@
 
                 <Entry Placeholder="Usuário" PlaceholderColor="#bababa"/>
                 <Entry Placeholder="Senha" PlaceholderColor="#bababa" IsPassword="True" MaxLength="20" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Grid.Row="1"/>
-                
+
                 <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                     <Button Text="Login" TextColor="White" BackgroundColor="DodgerBlue"  CornerRadius="10"/>
                     <Button Text="Se-Inscrever" TextColor="White" BackgroundColor="DodgerBlue"  CornerRadius="10"/>
                 </StackLayout>
-                
+
                 <Label Text="Consultar Eventos Próximos?"  HorizontalOptions="Center" Grid.Row="3"/>
-                <Button Text="Buscar Eventos" TextColor="White" BackgroundColor="DodgerBlue" Grid.Row="4" CornerRadius="10"/>
+                <Button Text="Buscar Eventos" Clicked="NavListarEventos" TextColor="White" BackgroundColor="DodgerBlue" Grid.Row="4" CornerRadius="10"/>
                 <StackLayout  Orientation="Vertical" Grid.Row="5" Padding="5" Margin="10">
                     <Label FontSize="Large" TextColor="#3897f0" Text="BrEvents" FontAttributes="Bold" HorizontalOptions="Center"/>
                     <BoxView BackgroundColor="Black" HeightRequest=".8" WidthRequest="100"/>
@@ -51,6 +50,5 @@
 
         </Grid>
 
-    </ContentPage.Content>
 
 </ContentPage>

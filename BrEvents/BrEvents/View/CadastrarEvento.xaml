@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrEvents.View.CadastrarEvento">
+    <ContentPage.Content>
+        <TableView HasUnevenRows="True">
+            <TableRoot>
+                <TableSection>
+                    <EntryCell x:Name="entNome" Placeholder="Nome"/>
+                    <ViewCell>
+                        <Editor x:Name="entDescricao" Placeholder="Descrição" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Início"/>
+                                <DatePicker x:Name="dtpDtInicio"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Fim"/>
+                                <DatePicker x:Name="dtpDtFim"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    <EntryCell x:Name="entCusto" Placeholder="Custo" Keyboard="Numeric"/>
+                    <EntryCell x:Name="entLocal" Placeholder="Local"/>
+                    <EntryCell x:Name="entEndereco" Placeholder="Endereço"/>
+                    <EntryCell x:Name="entCapMaxima" Placeholder="Capacidade Máxima"/>
+                    <EntryCell x:Name="entCamImagem" Placeholder="Caminho da Imagem"/>
+                    <ViewCell>
+                        <Frame>
+                            <Button Text="Adicionar Evento" Clicked="AddEvento" BackgroundColor="DodgerBlue" CornerRadius="10"/>
+                        </Frame>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

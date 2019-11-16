@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrEvents.View.ListarEventos">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Clicked="NavAddEvento"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+        <ListView x:Name="lvwUsuarios" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                      
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2" 
+                                   Source="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="60" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding Nome}"
+                                   FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Descricao}"
+                                   VerticalOptions="End" />
+
+                        </Grid>
+                            
+                    
+                        <!--<StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Nome"/>
+                                <Label Text="{Binding Nome}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Descricao"/>
+                                <Label Text="{Binding Descricao}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Local"/>
+                                <Label Text="{Binding Local}"/>
+                            </StackLayout>
+                        </StackLayout>-->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            <Label Text="Hello Teste!"/>
+            <Image Source="http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

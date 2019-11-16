@@ -1,8 +1,9 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using BrEvents.Models;
+using BrEvents.Data;
 using System.IO;
+using BrEvents.View;
 
 namespace BrEvents
 {
@@ -24,7 +25,7 @@ namespace BrEvents
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()
