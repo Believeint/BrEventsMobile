@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrEvents.Android", "BrEvent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrEvents.iOS", "BrEvents\BrEvents.iOS\BrEvents.iOS.csproj", "{FB1DB089-5259-4DD7-8842-43BBCE699625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrEvents", "BrEvents\BrEvents\BrEvents.csproj", "{098E354A-6A43-49A8-9526-A328AD003D39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrEvents", "BrEvents\BrEvents\BrEvents.csproj", "{098E354A-6A43-49A8-9526-A328AD003D39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,7 +44,6 @@ Global
 		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Debug|iPhone.Build.0 = Debug|iPhone
 		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
 		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Release|Any CPU.ActiveCfg = Release|iPhone
 		{FB1DB089-5259-4DD7-8842-43BBCE699625}.Release|Any CPU.Build.0 = Release|iPhone

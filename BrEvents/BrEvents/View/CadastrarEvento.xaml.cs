@@ -20,16 +20,21 @@ namespace BrEvents.View
 
         async void AddEvento(object sender, EventArgs e)
         {
-            var evento = new Evento();
-            evento.Nome = entNome.Text;
-            evento.Descricao = entDescricao.Text;
-            evento.DataInicio = dtpDtInicio.Date;
-            evento.DataFim = dtpDtFim.Date;
-            evento.Custo = float.Parse(entCusto.Text);
-            evento.Local = entLocal.Text;
-            evento.Endereco = entEndereco.Text;
-            evento.CapacidadeMaxima = int.Parse(entCapMaxima.Text);
-            evento.CaminhoImagem = entCamImagem.Text.ToString();
+            var evento = new Evento()
+            { 
+                Nome = entNome.Text,
+                Descricao = entDescricao.Text,
+                DataInicio = dtpDtInicio.Date,
+                DataFim = dtpDtFim.Date,
+                Custo = float.Parse(entCusto.Text),
+                Local = entLocal.Text,
+                Endereco = entEndereco.Text,
+                CapacidadeMaxima = int.Parse(entCapMaxima.Text),
+                CaminhoImagem = entCamImagem.Text
+            };
+
+
+          
 
             await App.DB.InserirEventoAsync(evento);
             await Navigation.PopAsync();

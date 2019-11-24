@@ -11,6 +11,7 @@ namespace BrEvents.Model
         public int IdEvento { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+        public string Detalhe { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
         public float Custo { get; set; }

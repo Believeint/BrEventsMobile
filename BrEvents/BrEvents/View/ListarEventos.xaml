@@ -4,59 +4,50 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="BrEvents.View.ListarEventos">
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="BrEvents.View.ListarEventos" BackgroundColor="WhiteSmoke">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" Clicked="NavAddEvento"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
-        <ListView x:Name="lvwUsuarios" HasUnevenRows="True">
+            <Label Text="O que Há?" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0" BackgroundColor="WhiteSmoke"/>
+            <BoxView BackgroundColor="Gray" HeightRequest=".5"/>
+            <ListView x:Name="lvwUsuarios" HasUnevenRows="True" ItemTapped="DetalharEventoPage">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                      
-                        <Grid Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.RowSpan="2" 
-                                   Source="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg" 
-                                   Aspect="AspectFill"
-                                   HeightRequest="60" />
-                            <Label Grid.Column="1"
-                                   Text="{Binding Nome}"
-                                   FontAttributes="Bold" />
-                            <Label Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="{Binding Descricao}"
-                                   VerticalOptions="End" />
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid Margin="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="7*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="150"/>
+                                        </Grid.RowDefinitions>
+                                    
+                                        <Label Text="{Binding DataInicio, StringFormat='{0:dd}'}" HorizontalOptions="Center" Grid.Row="0"/>
+                                        <BoxView BackgroundColor="Gray" Grid.Row="1"/>
+                                        <Label Text="{Binding DataInicio, StringFormat='{0:MMM}'}" HorizontalOptions="Center" Grid.Row="2"/>
+                                        <!--<Image Source="{Binding CaminhoImagem}" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>-->
+                                        <ffimageloading:CachedImage Source="{Binding CaminhoImagem}" DownsampleToViewSize="True" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>
+                                    </Grid>
+                                </StackLayout>
 
-                        </Grid>
-                            
-                    
-                        <!--<StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Nome"/>
-                                <Label Text="{Binding Nome}"/>
+                                <Frame>
+                                <StackLayout BackgroundColor="White">
+                                    <Label Text="{Binding Nome}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Descricao}" FontSize="Micro"/>
+                                </StackLayout>
+                                </Frame>
                             </StackLayout>
-
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Descricao"/>
-                                <Label Text="{Binding Descricao}"/>
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Local"/>
-                                <Label Text="{Binding Local}"/>
-                            </StackLayout>
-                        </StackLayout>-->
-                    </ViewCell>
+                        </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

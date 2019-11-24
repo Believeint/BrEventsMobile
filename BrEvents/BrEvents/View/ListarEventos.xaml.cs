@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BrEvents.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,6 +29,11 @@ namespace BrEvents.View
         async void NavAddEvento(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CadastrarEvento());
+        }
+
+        private void DetalharEventoPage(object sender, ItemTappedEventArgs e)
+        {
+            Navigation.PushAsync(new DetalharEvento() { BindingContext = e.Item as Evento });
         }
     }
 }
