@@ -6,13 +6,18 @@
              mc:Ignorable="d"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="BrEvents.View.ListarEventos" BackgroundColor="WhiteSmoke">
-   
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Se Inscrever" Clicked="SeInscreverPage" Order="Primary" Priority="2"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="O que Há?" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0" BackgroundColor="WhiteSmoke"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="O que Há?" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0" BackgroundColor="WhiteSmoke"/>
+            </StackLayout>
             <BoxView BackgroundColor="Gray" HeightRequest=".5"/>
-            <Label x:Name="lblMessage" FontAttributes="Bold" TextColor="Gray" FontSize="Small"/>
+            <Label x:Name="lblMessage" FontAttributes="Bold" TextColor="Gray" FontSize="Small" IsVisible="False"/>
             <ListView x:Name="lvwUsuarios" HasUnevenRows="True" ItemTapped="DetalharEventoPage">
             <ListView.ItemTemplate>
                 <DataTemplate>

@@ -17,17 +17,17 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding Nome, StringFormat='Bem Vindo, {0}'}" HorizontalOptions="StartAndExpand" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0" BackgroundColor="WhiteSmoke"/>
+            <StackLayout Orientation="Horizontal" BackgroundColor="WhiteSmoke">
+                <Label Text="{Binding Nome, StringFormat='Bem Vindo, {0}'}" HorizontalOptions="StartAndExpand" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0"/>
                 <ImageButton Margin="0,5,10,0" Source="sair.png" Clicked="SairBtnClicked" HorizontalOptions="End" HeightRequest="30"/>
             </StackLayout>
                 <BoxView BackgroundColor="Gray" HeightRequest=".5"/>
-            <Label x:Name="lblMessage" Margin="5" FontAttributes="Bold" TextColor="Gray" FontSize="Small" IsVisible="False"/>
+            <Label x:Name="lblMessage" Margin="10" FontAttributes="Bold" TextColor="Gray" FontSize="Small" IsVisible="False"/>
             <ListView x:Name="lvwUsuarios" HasUnevenRows="True" ItemTapped="DetalharEventoUPage">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical" Margin="10">
+                            <StackLayout Orientation="Vertical" Margin="5">
                                 <StackLayout Orientation="Horizontal">
                                     <Grid Margin="10">
                                         <Grid.ColumnDefinitions>

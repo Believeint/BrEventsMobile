@@ -39,5 +39,15 @@ namespace BrEvents.View
         {
             Navigation.PushAsync(new DetalharEvento() { BindingContext = e.Item as Evento });
         }
+
+        async void SeInscreverPage(object sender, EventArgs e)
+        {
+           await Navigation.PushAsync(new SeInscrever());
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

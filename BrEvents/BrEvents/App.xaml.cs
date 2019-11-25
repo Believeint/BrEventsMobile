@@ -27,7 +27,8 @@ namespace BrEvents
             InitializeComponent();
 
 
-            MainPage = new Login();
+            //MainPage = new NavigationPage(new View.Usuarios.CadastrarEventoU());
+            MainPage = new NavigationPage(new Login());
      
         }
 

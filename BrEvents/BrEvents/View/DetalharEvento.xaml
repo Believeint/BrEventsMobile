@@ -9,20 +9,26 @@
     <ContentPage.Content>
         <ScrollView>
         <Frame>
-            <StackLayout IsClippedToBounds="True">
+            <StackLayout IsClippedToBounds="True" Margin="10">
                 <image:CachedImage Source="{Binding CaminhoImagem}" HeightRequest="250" WidthRequest="180" Aspect="AspectFill"/>
-                <TableView>
+                <TableView HasUnevenRows="True">
                     
                     <TableRoot>
                         <TableSection>
-                            <TextCell Text="Nome do Evento" Detail="{Binding Nome}"/>
-                            <TextCell Text="Detalhes" Detail="{Binding Detalhe}"/>
+                            <TextCell Text="Nome do Evento" Detail="{Binding Nome}" DetailColor="Black"/>
+                            <ViewCell>
+                                <StackLayout Margin="17">
+                                        <Label Text="Detalhes" TextColor="#ff5050"/>
+                                        <Label Text="{Binding Detalhe}"/>
+                                </StackLayout>
+                            </ViewCell>
                             <TextCell Text="Local" Detail="{Binding Local}"/>
                             <TextCell Text="Endereço" Detail="{Binding Endereco}"/>
                             <TextCell Text="Custo" Detail="{Binding Custo}"/>
                             <TextCell Text="Data Início" Detail="{Binding DataInicio, StringFormat='{0:dd/MMM}'}"/>
                             <TextCell Text="Data Fim" Detail="{Binding DataFim, StringFormat='{0:dd/MMM}'}"/>
-                        </TableSection>
+                            <TextCell x:Name="txtMessage" Text="               Precisa estar logado para se inscrever!"/>
+                            </TableSection>
                     </TableRoot>
                     
                 </TableView>

@@ -20,6 +20,8 @@ namespace BrEvents.View
         async void NavListarEventos(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ListarEventos());
+            //App.Current.MainPage = new NavigationPage(new ListarEventos());
+            //await Navigation.PushAsync(new ListarEventos());
         }
 
         async void WelcomePage(object sender, EventArgs e)
@@ -45,9 +47,9 @@ namespace BrEvents.View
             //Navigation.PushAsync(new View.Usuario.ListarEventosU(usuario));
         }
 
-        private void SeInscreverPage(object sender, EventArgs e)
+        async void SeInscreverPage(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new SeInscrever());
         }
     }
 }

@@ -7,42 +7,47 @@
              x:Class="BrEvents.View.Usuarios.CadastrarEventoU">
     
     <ContentPage.Content>
-        <TableView HasUnevenRows="True">
-            <TableRoot>
-                <TableSection>
-                    <EntryCell Text="LinuxDev Meeting " x:Name="entNome" Placeholder="Nome"/>
-                    <ViewCell>
-                        <StackLayout>
-                            <Editor Text="linuxdev-br 2019 - O Linux Developer Conference Brasil pretende levar a comunidade brasileira de desenvolvimento Linux ao nível internacional." x:Name="entDescricao" Placeholder="Descrição" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
-                            <Editor Text="Linux Developer Conference Brasil 2019 Sobre este evento Temos o orgulho de anunciar a terceira edição do Linux Developer Conference Brazil . O linuxdev-br é uma conferência que nasceu para ser um ponto de encontro para comunidades que desenvolvem projetos de Software Livre e de Código Aberto (FOSS) que constituem o Núcleo dos modernos sistemas Linux." x:Name="entDetalhe" Placeholder="Detalhes" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
-                        </StackLayout>
-                        </ViewCell>
-                    <ViewCell>
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Data de Início"/>
-                                <DatePicker x:Name="dtpDtInicio" Date="12/10/2019"/>
-                            </StackLayout>
+        <ScrollView> 
+            <StackLayout Margin="10">
+                <Label Text="Nos Conte um pouco mais o que planeja..." TextColor="Gray" FontAttributes="Bold" FontSize="Medium"/>
+                <BoxView BackgroundColor="Gray" HeightRequest=".3"/>
+            
+                <Label Text="Nome do Evento"/>
+                <Entry Text="LinuxDev Meeting " x:Name="entNome"/>
+            
+                <Label Text="Descrição do Evento"/>
+                <Editor Text="linuxdev-br 2019 - O Linux Developer Conference Brasil pretende levar a comunidade brasileira de desenvolvimento Linux ao nível internacional." x:Name="entDescricao" Keyboard="Chat"/>
+            
+                <Label Text="Detalhe do Evento"/>
+                <Editor Text="Linux Developer Conference Brasil 2019 Sobre este evento Temos o orgulho de anunciar a terceira edição do Linux Developer Conference Brazil . O linuxdev-br é uma conferência que nasceu para ser um ponto de encontro para comunidades que desenvolvem projetos de Software Livre e de Código Aberto (FOSS) que constituem o Núcleo dos modernos sistemas Linux." x:Name="entDetalhe" Keyboard="Chat"/>
+            
+                <Label Text="Data de Início"/>
+                <DatePicker Date="12/15/2019" x:Name="dtpDtInicio"/>
+            
+                <Label Text="Data de Fim"/>
+                <DatePicker Date="12/15/2019" x:Name="dtpDtFim"/>
+            
+                <Label Text="Custo"/>
+                <Entry Text="0" x:Name="entCusto" Keyboard="Numeric"/>
 
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Data de Fim"/>
-                                <DatePicker x:Name="dtpDtFim" Date="12/15/2019"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                    <EntryCell Text="0" x:Name="entCusto" Placeholder="Custo" Keyboard="Numeric"/>
-                    <EntryCell Text="Parque da Cidade" x:Name="entLocal" Placeholder="Local"/>
-                    <EntryCell Text="Brasília, DF" x:Name="entEndereco" Placeholder="Endereço"/>
-                    <EntryCell Text="500" x:Name="entCapMaxima" Placeholder="Capacidade Máxima" Keyboard="Numeric"/>
-                    <EntryCell Text="https://prod-discovery.edx-cdn.org/media/course/image/d1fc32bc-092d-479e-a767-d060beb3b4ad-408271aa55b8.small.jpg" x:Name="entCamImagem" Placeholder="Caminho da Imagem"/>
-                    <ViewCell>
-                        <Frame>
-                            <Button Text="Adicionar Evento" TextColor="White" Clicked="AddEvento" BackgroundColor="DodgerBlue" CornerRadius="10"/>
-                        </Frame>
-                    </ViewCell>
-                </TableSection>
-            </TableRoot>
-        </TableView>
+                <Label Text="Local"/>
+                <Entry Text="Parque da Cidade" x:Name="entLocal"/>
+
+                <Label Text="Endereço"/>
+                <Entry Text="Brasília, DF" x:Name="entEndereco"/>
+
+                <Label Text="Capacidade Máxima"/>
+                <Entry Text="500" x:Name="entCapMaxima" Keyboard="Numeric"/>
+
+                <Label Text="URI da Imagem"/>
+                <Editor Text="https://prod-discovery.edx-cdn.org/media/course/image/d1fc32bc-092d-479e-a767-d060beb3b4ad-408271aa55b8.small.jpg" x:Name="entCamImagem" Keyboard="Chat"/>
+
+                <Button Text="Adicionar Novo" TextColor="White" Clicked="AddEvento" BackgroundColor="DodgerBlue" CornerRadius="10"/>
+            
+        </StackLayout>
+        </ScrollView>
+     
+
     </ContentPage.Content>
     
 </ContentPage>
