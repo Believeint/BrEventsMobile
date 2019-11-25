@@ -17,13 +17,13 @@ namespace BrEvents.View.Usuarios
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
 
-            var evento = await App.DB.GetEventoAsync(7);
-            BindingContext = evento;
-        }
+        //    var evento = await App.DB.GetEventoAsync(7);
+        //    BindingContext = evento;
+        //}
 
 
         async void EditarEvento(object sender, EventArgs e)

@@ -42,12 +42,9 @@ namespace BrEvents.View
 
         async void SeInscreverPage(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new SeInscrever());
+            await DisplayAlert("Alerta", "Precisa estar logado", "OK");
         }
-
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-
-        }
+ 
+       
     }
 }

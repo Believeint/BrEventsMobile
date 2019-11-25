@@ -5,7 +5,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BrEvents.View.Usuarios.EditarEventoU">
+
+
     <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <Label Text="Alterar evento..." TextColor="Gray" FontAttributes="Bold" FontSize="Medium"/>
+                <BoxView BackgroundColor="Gray" HeightRequest=".3"/>
+
+                <Label Text="Nome do Evento"/>
+                <Entry Text="{Binding Nome}" x:Name="entNome"/>
+
+                <Label Text="Descrição do Evento"/>
+                <Editor Text="{Binding Descricao}" x:Name="entDescricao" Keyboard="Chat"/>
+
+                <Label Text="Detalhe do Evento"/>
+                <Editor Text="{Binding Detalhe}" x:Name="entDetalhe" Keyboard="Chat"/>
+
+                <Label Text="Data de Início"/>
+                <DatePicker Date="{Binding DataInicio}" x:Name="dtpDtInicio"/>
+
+                <Label Text="Data de Fim"/>
+                <DatePicker Date="{Binding DataFim}" x:Name="dtpDtFim"/>
+
+                <Label Text="Custo"/>
+                <Entry Text="{Binding Custo}" x:Name="entCusto" Keyboard="Numeric"/>
+
+                <Label Text="Local"/>
+                <Entry Text="{Binding Local}" x:Name="entLocal"/>
+
+                <Label Text="Endereço"/>
+                <Entry Text="{Binding Endereco}" x:Name="entEndereco"/>
+
+                <Label Text="Capacidade Máxima"/>
+                <Entry Text="{Binding CapacidadeMaxima}" x:Name="entCapMaxima" Keyboard="Numeric"/>
+
+                <Label Text="URI da Imagem"/>
+                <Entry Text="{Binding CaminhoImagem}" x:Name="entCamImagem"/>
+
+                <Button Text="Atualizar Evento" TextColor="White" Clicked="EditarEvento" BackgroundColor="Green" CornerRadius="5"/>
+
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+
+
+
+    <!--<ContentPage.Content>
         <TableView HasUnevenRows="True">
             <TableRoot>
                 <TableSection>
@@ -42,5 +90,5 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>

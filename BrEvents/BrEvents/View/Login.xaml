@@ -28,21 +28,28 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="70"/>
                 </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                
 
-                <Entry x:Name="entUsuario" Placeholder="Usuário" PlaceholderColor="#bababa"/>
-                <Entry x:Name="entSenha" Placeholder="Senha" PlaceholderColor="#bababa" IsPassword="True" MaxLength="20" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Grid.Row="1"/>
+                <Entry x:Name="entUsuario" Placeholder="Usuário" PlaceholderColor="#bababa" Grid.ColumnSpan="2"/>
+            <Entry x:Name="entSenha" Placeholder="Senha" PlaceholderColor="#bababa" IsPassword="True" MaxLength="20" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Grid.Row="1" Grid.ColumnSpan="2"/>
 
-                <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Button Text="Login" Clicked="WelcomePage" TextColor="White" BackgroundColor="DodgerBlue"  CornerRadius="10"/>
-                    <Button Text="Se-Inscrever" Clicked="SeInscreverPage" TextColor="White" BackgroundColor="DodgerBlue"  CornerRadius="10"/>
-                </StackLayout>
+            
+                    
+                    <Button Text="Login" Grid.Row="2" Grid.Column="0" Clicked="WelcomePage" TextColor="White" BackgroundColor="DodgerBlue"  CornerRadius="10"/>
+                    <Button Text="Se-Inscrever" Grid.Row="2" Grid.Column="1" Clicked="SeInscreverPage" TextColor="White" BackgroundColor="DodgerBlue"  CornerRadius="10"/>
 
-                <Label Text="Consultar Eventos Próximos?"  HorizontalOptions="Center" Grid.Row="3"/>
-                <Button Text="Buscar Eventos" Clicked="NavListarEventos" TextColor="White" BackgroundColor="DodgerBlue" Grid.Row="4" CornerRadius="10"/>
-                <StackLayout  Orientation="Vertical" Grid.Row="5" Padding="5" Margin="10">
-                    <Label FontSize="Large" TextColor="#3897f0" Text="BrEvents" FontAttributes="Bold" HorizontalOptions="Center"/>
-                    <BoxView BackgroundColor="Black" HeightRequest=".8" WidthRequest="100"/>
-                    <Label FontSize="Small" Text="Plataforma de Eventos Voltada a Tecnologia" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+
+            <Label Text="Consultar Eventos Próximos?"  HorizontalOptions="Center" Grid.Row="3" Grid.ColumnSpan="2"/>
+            <Button Text="Buscar Eventos" Clicked="NavListarEventos" TextColor="White" BackgroundColor="DodgerBlue" Grid.Row="4" CornerRadius="10" Grid.ColumnSpan="2"/>
+            <StackLayout  Orientation="Vertical" Grid.Row="5" Padding="5" Margin="10" Grid.ColumnSpan="2">
+                <Label FontSize="Large" TextColor="#3897f0" Text="BrEvents" FontAttributes="Bold" HorizontalOptions="Center" />
+                <BoxView BackgroundColor="Black" HeightRequest=".8" WidthRequest="100" />
+                <Label FontSize="Small" Text="Plataforma de Eventos Voltada a Tecnologia" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
                      
                 </StackLayout>
 
