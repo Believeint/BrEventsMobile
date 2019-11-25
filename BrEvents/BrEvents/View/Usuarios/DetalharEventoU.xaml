@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:image="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrEvents.View.Usuarios.DetalharEventoU">
+    
+        <ContentPage.Content>
+            <ScrollView>
+                <Frame>
+                    <StackLayout IsClippedToBounds="True">
+                        <image:CachedImage Source="{Binding CaminhoImagem}" HeightRequest="250" WidthRequest="180" Aspect="AspectFill"/>
+                        <TableView HasUnevenRows="True">
+
+                            <TableRoot>
+                                <TableSection>
+                                    <TextCell Text="{Binding IdEvento}"/>
+                                    <TextCell Text="Nome do Evento" Detail="{Binding Nome}"/>
+                                    <TextCell Text="Detalhes" Detail="{Binding Detalhe}"/>
+                                    <TextCell Text="Local" Detail="{Binding Local}"/>
+                                    <TextCell Text="Endereço" Detail="{Binding Endereco}"/>
+                                    <TextCell Text="Custo" Detail="{Binding Custo}"/>
+                                    <TextCell Text="Data Início" Detail="{Binding DataInicio, StringFormat='{0:dd/MMM}'}"/>
+                                    <TextCell Text="Data Fim" Detail="{Binding DataFim, StringFormat='{0:dd/MMM}'}"/>
+                                <ViewCell>
+                                    <Frame>
+                                        <StackLayout Orientation="Horizontal">
+                                        <Button Text="Editar Evento" Clicked="EditarEventoUPage" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="5"/>
+                                        <Button Text="Excluir Evento" Clicked="ExcluirEventoUPage" TextColor="White" BackgroundColor="OrangeRed" CornerRadius="5"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+
+                        </TableView>
+
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </ContentPage.Content>
+   
+</ContentPage>

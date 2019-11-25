@@ -5,6 +5,7 @@ using BrEvents.Data;
 using System.IO;
 using BrEvents.View;
 
+
 namespace BrEvents
 {
     public partial class App : Application
@@ -25,7 +26,9 @@ namespace BrEvents
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+
+            MainPage = new Login();
+     
         }
 
         protected override void OnStart()

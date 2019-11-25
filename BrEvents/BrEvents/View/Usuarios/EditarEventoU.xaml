@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrEvents.View.Usuarios.EditarEventoU">
+    <ContentPage.Content>
+        <TableView HasUnevenRows="True">
+            <TableRoot>
+                <TableSection>
+                    <EntryCell x:Name="entNome" Text="{Binding Nome}" Placeholder="Nome"/>
+                    <ViewCell>
+                        <StackLayout>
+                            <Editor x:Name="entDescricao" Text="{Binding Descricao}" Placeholder="Descrição" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
+                            <Editor x:Name="entDetalhe" Text="{Binding Detalhe}" Placeholder="Detalhes" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Início"/>
+                                <DatePicker x:Name="dtpDtInicio" Date="{Binding DataInicio}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Fim"/>
+                                <DatePicker x:Name="dtpDtFim" Date="{Binding DataFim}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    <EntryCell x:Name="entCusto" Text="{Binding Custo}" Placeholder="Custo" Keyboard="Numeric"/>
+                    <EntryCell x:Name="entLocal" Text="{Binding Local}" Placeholder="Local"/>
+                    <EntryCell x:Name="entEndereco" Text="{Binding Endereco}" Placeholder="Endereço"/>
+                    <EntryCell x:Name="entCapMaxima" Text="{Binding CapacidadeMaxima}" Placeholder="Capacidade Máxima" Keyboard="Numeric"/>
+                    <EntryCell x:Name="entCamImagem" Text="{Binding CaminhoImagem}" Placeholder="Caminho da Imagem"/>
+                    <ViewCell>
+                        <Frame>
+                            <Button Text="Atualizar Evento" TextColor="White" Clicked="EditarEvento" BackgroundColor="Green" CornerRadius="5"/>
+                        </Frame>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

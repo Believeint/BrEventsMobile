@@ -7,17 +7,28 @@
              mc:Ignorable="d"
              x:Class="BrEvents.View.DetalharEvento">
     <ContentPage.Content>
+        <ScrollView>
         <Frame>
             <StackLayout IsClippedToBounds="True">
-            <image:CachedImage Source="{Binding CaminhoImagem}" HeightRequest="250" WidthRequest="180" Aspect="AspectFill"/>
-                <Label Text="{Binding Nome}"/>
-                <Label Text="{Binding DataInicio}"/>
-                <Label Text="{Binding DataFim}"/>
-                <Label Text="{Binding Local}"/>
-                <Label Text="{Binding Detahe}"/>
-                <Label Text="{Binding Endereco}"/>
-                <Label Text="{Binding Custo}"/>
+                <image:CachedImage Source="{Binding CaminhoImagem}" HeightRequest="250" WidthRequest="180" Aspect="AspectFill"/>
+                <TableView>
+                    
+                    <TableRoot>
+                        <TableSection>
+                            <TextCell Text="Nome do Evento" Detail="{Binding Nome}"/>
+                            <TextCell Text="Detalhes" Detail="{Binding Detalhe}"/>
+                            <TextCell Text="Local" Detail="{Binding Local}"/>
+                            <TextCell Text="Endereço" Detail="{Binding Endereco}"/>
+                            <TextCell Text="Custo" Detail="{Binding Custo}"/>
+                            <TextCell Text="Data Início" Detail="{Binding DataInicio, StringFormat='{0:dd/MMM}'}"/>
+                            <TextCell Text="Data Fim" Detail="{Binding DataFim, StringFormat='{0:dd/MMM}'}"/>
+                        </TableSection>
+                    </TableRoot>
+                    
+                </TableView>
+               
             </StackLayout>
         </Frame>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

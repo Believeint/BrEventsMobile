@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrEvents.View.Usuarios.CadastrarEventoU">
+    
+    <ContentPage.Content>
+        <TableView HasUnevenRows="True">
+            <TableRoot>
+                <TableSection>
+                    <EntryCell Text="LinuxDev Meeting " x:Name="entNome" Placeholder="Nome"/>
+                    <ViewCell>
+                        <StackLayout>
+                            <Editor Text="linuxdev-br 2019 - O Linux Developer Conference Brasil pretende levar a comunidade brasileira de desenvolvimento Linux ao nível internacional." x:Name="entDescricao" Placeholder="Descrição" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
+                            <Editor Text="Linux Developer Conference Brasil 2019 Sobre este evento Temos o orgulho de anunciar a terceira edição do Linux Developer Conference Brazil . O linuxdev-br é uma conferência que nasceu para ser um ponto de encontro para comunidades que desenvolvem projetos de Software Livre e de Código Aberto (FOSS) que constituem o Núcleo dos modernos sistemas Linux." x:Name="entDetalhe" Placeholder="Detalhes" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
+                        </StackLayout>
+                        </ViewCell>
+                    <ViewCell>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Início"/>
+                                <DatePicker x:Name="dtpDtInicio" Date="12/10/2019"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data de Fim"/>
+                                <DatePicker x:Name="dtpDtFim" Date="12/15/2019"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    <EntryCell Text="0" x:Name="entCusto" Placeholder="Custo" Keyboard="Numeric"/>
+                    <EntryCell Text="Parque da Cidade" x:Name="entLocal" Placeholder="Local"/>
+                    <EntryCell Text="Brasília, DF" x:Name="entEndereco" Placeholder="Endereço"/>
+                    <EntryCell Text="500" x:Name="entCapMaxima" Placeholder="Capacidade Máxima" Keyboard="Numeric"/>
+                    <EntryCell Text="https://prod-discovery.edx-cdn.org/media/course/image/d1fc32bc-092d-479e-a767-d060beb3b4ad-408271aa55b8.small.jpg" x:Name="entCamImagem" Placeholder="Caminho da Imagem"/>
+                    <ViewCell>
+                        <Frame>
+                            <Button Text="Adicionar Evento" TextColor="White" Clicked="AddEvento" BackgroundColor="DodgerBlue" CornerRadius="10"/>
+                        </Frame>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+    
+</ContentPage>

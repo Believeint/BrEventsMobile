@@ -21,15 +21,19 @@ namespace BrEvents.View
         {
             base.OnAppearing();
 
+            
             var eventos = await App.DB.GetEventosAsync();
-
+            if(eventos.Count > 0) { 
             lvwUsuarios.ItemsSource = eventos;
+            }
+            else
+            {
+                lblMessage.IsVisible = true;
+                lblMessage.Text = "Não encontramos eventos, Favor voltar mais tarde.";
+            }
         }
 
-        async void NavAddEvento(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CadastrarEvento());
-        }
+        
 
         private void DetalharEventoPage(object sender, ItemTappedEventArgs e)
         {

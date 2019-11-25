@@ -3,19 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:image="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             x:Class="BrEvents.View.ListarEventos" BackgroundColor="WhiteSmoke">
-   
+             x:Class="BrEvents.View.Usuarios.ListarEventosU" Title="Eventos">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="NavAddEvento">
+            <ToolbarItem.IconImageSource>
+                <FileImageSource File="add.png"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="O que Há?" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0" BackgroundColor="WhiteSmoke"/>
-            <BoxView BackgroundColor="Gray" HeightRequest=".5"/>
-            <Label x:Name="lblMessage" FontAttributes="Bold" TextColor="Gray" FontSize="Small"/>
-            <ListView x:Name="lvwUsuarios" HasUnevenRows="True" ItemTapped="DetalharEventoPage">
-            <ListView.ItemTemplate>
-                <DataTemplate>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Nome, StringFormat='Bem Vindo, {0}'}" HorizontalOptions="StartAndExpand" FontSize="Medium" TextColor="Gray" Margin="10,0,0,0" BackgroundColor="WhiteSmoke"/>
+                <ImageButton Margin="0,5,10,0" Source="sair.png" Clicked="SairBtnClicked" HorizontalOptions="End" HeightRequest="30"/>
+            </StackLayout>
+                <BoxView BackgroundColor="Gray" HeightRequest=".5"/>
+            <Label x:Name="lblMessage" Margin="5" FontAttributes="Bold" TextColor="Gray" FontSize="Small" IsVisible="False"/>
+            <ListView x:Name="lvwUsuarios" HasUnevenRows="True" ItemTapped="DetalharEventoUPage">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical" Margin="10">
                                 <StackLayout Orientation="Horizontal">
@@ -30,27 +40,28 @@
                                             <RowDefinition Height="20"/>
                                             <RowDefinition Height="150"/>
                                         </Grid.RowDefinitions>
-                                    
+
                                         <Label Text="{Binding DataInicio, StringFormat='{0:dd}'}" HorizontalOptions="Center" Grid.Row="0"/>
                                         <BoxView BackgroundColor="Gray" Grid.Row="1"/>
                                         <Label Text="{Binding DataInicio, StringFormat='{0:MMM}'}" HorizontalOptions="Center" Grid.Row="2"/>
                                         <!--<Image Source="{Binding CaminhoImagem}" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>-->
-                                        <ffimageloading:CachedImage Source="{Binding CaminhoImagem}" DownsampleToViewSize="True" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>
+                                        <image:CachedImage Source="{Binding CaminhoImagem}" DownsampleToViewSize="True" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>
                                     </Grid>
                                 </StackLayout>
 
                                 <Frame>
-                                <StackLayout BackgroundColor="White">
-                                    <Label Text="{Binding Nome}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                    <Label Text="{Binding Descricao}" FontSize="Micro"/>
-                                </StackLayout>
+                                    <StackLayout BackgroundColor="White">
+                                        <Label Text="{Binding Nome}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Descricao}" FontSize="Micro"/>
+                                    </StackLayout>
                                 </Frame>
                             </StackLayout>
                         </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-           
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>

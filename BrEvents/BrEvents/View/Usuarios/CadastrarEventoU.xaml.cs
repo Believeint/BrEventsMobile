@@ -7,23 +7,23 @@ using BrEvents.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BrEvents.View
+namespace BrEvents.View.Usuarios
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastrarEvento : ContentPage
+    public partial class CadastrarEventoU : ContentPage
     {
-        public CadastrarEvento()
+        public CadastrarEventoU()
         {
             InitializeComponent();
-
         }
 
         async void AddEvento(object sender, EventArgs e)
         {
             var evento = new Evento()
-            { 
+            {
                 Nome = entNome.Text,
                 Descricao = entDescricao.Text,
+                Detalhe = entDetalhe.Text,
                 DataInicio = dtpDtInicio.Date,
                 DataFim = dtpDtFim.Date,
                 Custo = float.Parse(entCusto.Text),
@@ -34,9 +34,10 @@ namespace BrEvents.View
             };
 
 
-          
+
 
             await App.DB.InserirEventoAsync(evento);
+            await DisplayAlert("Alerta", "Evento inserido com sucesso", "OK");
             await Navigation.PopAsync();
 
         }
