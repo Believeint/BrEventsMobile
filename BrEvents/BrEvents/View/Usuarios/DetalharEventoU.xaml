@@ -15,22 +15,23 @@
                         <TableView HasUnevenRows="True">
 
                             <TableRoot>
-                                <TableSection>
-                                    <TextCell Text="{Binding IdEvento}"/>
-                                    <TextCell Text="Nome do Evento" Detail="{Binding Nome}"/>
+                            <TableSection>
+                                <TextCell Text="Nome do Evento" Detail="{Binding Nome}"/>
                                     <TextCell Text="Detalhes" Detail="{Binding Detalhe}"/>
                                     <TextCell Text="Local" Detail="{Binding Local}"/>
                                     <TextCell Text="Endereço" Detail="{Binding Endereco}"/>
-                                    <TextCell Text="Custo" Detail="{Binding Custo}"/>
-                                    <TextCell Text="Data Início" Detail="{Binding DataInicio, StringFormat='{0:dd/MMM}'}"/>
-                                    <TextCell Text="Data Fim" Detail="{Binding DataFim, StringFormat='{0:dd/MMM}'}"/>
+                                    <TextCell x:Name="txtCusto" Text="Custo" Detail="{Binding Custo, StringFormat='{0},00'}"/>
+                                    <TextCell Text="Data Início" Detail="{Binding DataInicio, StringFormat='{0:dd} de {0:MMMM}'}"/>
+                                <TextCell Text="Data Fim" Detail="{Binding DataFim, StringFormat='{0:dd} de {0:MMMM}'}"/>
                                 <ViewCell>
-                                    <Frame>
-                                        <StackLayout Orientation="Horizontal">
-                                        <Button Text="Editar Evento" Clicked="EditarEventoUPage" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="5"/>
-                                        <Button Text="Excluir Evento" Clicked="ExcluirEventoUPage" TextColor="White" BackgroundColor="OrangeRed" CornerRadius="5"/>
-                                        </StackLayout>
-                                    </Frame>
+                                    <Grid Margin="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Text="Editar Evento"  Clicked="EditarEventoUPage" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="5"/>
+                                        <Button Text="Excluir Evento" Clicked="ExcluirEventoUPage" TextColor="White" BackgroundColor="OrangeRed" CornerRadius="5" Grid.Column="1"/>
+                                    </Grid>
                                 </ViewCell>
                                 </TableSection>
                             </TableRoot>

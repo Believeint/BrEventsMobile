@@ -4,10 +4,12 @@ using Xamarin.Forms.Xaml;
 using BrEvents.Data;
 using System.IO;
 using BrEvents.View;
-
+using System.Threading;
+using System.Globalization;
 
 namespace BrEvents
 {
+
     public partial class App : Application
     {
         static Banco banco;
@@ -25,7 +27,7 @@ namespace BrEvents
         public App()
         {
             InitializeComponent();
-
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
             //MainPage = new NavigationPage(new View.Usuarios.CadastrarEventoU());
             MainPage = new NavigationPage(new Login());

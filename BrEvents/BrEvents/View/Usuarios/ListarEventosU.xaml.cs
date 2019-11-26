@@ -63,7 +63,7 @@ namespace BrEvents.View.Usuarios
          async void SairBtnClicked(object sender, EventArgs e)
          {
             await DisplayAlert("Alerta","Sessão encerrada","OK");
-            App.Current.MainPage = new Login();
+            App.Current.MainPage = new NavigationPage(new Login());
          }
 
         

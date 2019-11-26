@@ -42,7 +42,7 @@
                 <Label Text="URI da Imagem"/>
                 <Entry Text="https://prod-discovery.edx-cdn.org/media/course/image/d1fc32bc-092d-479e-a767-d060beb3b4ad-408271aa55b8.small.jpg" x:Name="entCamImagem" Keyboard="Chat"/>
 
-                <Button Text="Adicionar Novo" TextColor="White" Clicked="AddEvento" BackgroundColor="DodgerBlue" CornerRadius="10"/>
+                <Button Margin="10" Text="Adicionar Novo" TextColor="White" Clicked="AddEvento" BackgroundColor="DodgerBlue" CornerRadius="10"/>
             
         </StackLayout>
         </ScrollView>

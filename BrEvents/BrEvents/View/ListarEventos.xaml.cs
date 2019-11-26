@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using BrEvents.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Globalization;
+using System.Threading;
 
 namespace BrEvents.View
 {
@@ -15,6 +17,7 @@ namespace BrEvents.View
         public ListarEventos()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
         }
 
         protected async override void OnAppearing()

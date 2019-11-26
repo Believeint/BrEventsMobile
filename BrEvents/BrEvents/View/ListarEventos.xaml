@@ -38,7 +38,7 @@
                                     
                                         <Label Text="{Binding DataInicio, StringFormat='{0:dd}'}" HorizontalOptions="Center" Grid.Row="0"/>
                                         <BoxView BackgroundColor="Gray" Grid.Row="1"/>
-                                        <Label Text="{Binding DataInicio, StringFormat='{0:MMM}'}" HorizontalOptions="Center" Grid.Row="2"/>
+                                        <Label Text="{Binding DataInicio, StringFormat='{0:MM}'}" HorizontalOptions="Center" Grid.Row="2"/>
                                         <!--<Image Source="{Binding CaminhoImagem}" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>-->
                                         <ffimageloading:CachedImage Source="{Binding CaminhoImagem}" DownsampleToViewSize="True" HeightRequest="150" Aspect="AspectFill" Grid.Column="1" Grid.RowSpan="4"/>
                                     </Grid>

@@ -28,23 +28,23 @@ namespace BrEvents.View.Usuarios
 
         async void EditarEvento(object sender, EventArgs e)
         {
-            var evento = new Evento()
-            {
-                Nome = entNome.Text,
-                Descricao = entDescricao.Text,
-                Detalhe = entDetalhe.Text,
-                DataInicio = dtpDtInicio.Date,
-                DataFim = dtpDtFim.Date,
-                Custo = float.Parse(entCusto.Text),
-                Local = entLocal.Text,
-                Endereco = entEndereco.Text,
-                CapacidadeMaxima = int.Parse(entCapMaxima.Text),
-                CaminhoImagem = entCamImagem.Text
-            };
+            var evento = (Evento)BindingContext;
+
+            evento.Nome = entNome.Text;
+            evento.Descricao = entDescricao.Text;
+            evento.Detalhe = entDetalhe.Text;
+            evento.DataInicio = dtpDtInicio.Date;
+            evento.DataFim = dtpDtFim.Date;
+            evento.Custo = float.Parse(entCusto.Text);
+            evento.Local = entLocal.Text;
+            evento.Endereco = entEndereco.Text;
+            evento.CapacidadeMaxima = int.Parse(entCapMaxima.Text);
+            evento.CaminhoImagem = entCamImagem.Text;
+            
 
             await App.DB.EditarEventoAsync(evento);
             await DisplayAlert("Alerta","Evento Atualizado com sucesso"," OK");
-            await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
     }
 }

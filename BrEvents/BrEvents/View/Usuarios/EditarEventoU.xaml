@@ -43,7 +43,7 @@
                 <Label Text="URI da Imagem"/>
                 <Entry Text="{Binding CaminhoImagem}" x:Name="entCamImagem"/>
 
-                <Button Text="Atualizar Evento" TextColor="White" Clicked="EditarEvento" BackgroundColor="Green" CornerRadius="5"/>
+                <Button Margin="10" Text="Atualizar Evento" TextColor="White" Clicked="EditarEvento" BackgroundColor="Green" CornerRadius="5"/>
 
             </StackLayout>
         </ScrollView>

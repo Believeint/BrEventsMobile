@@ -67,7 +67,7 @@ namespace BrEvents.Data
         }
 
         public Task<int> EditarEventoAsync(Evento evento)
-        {
+        {       
             return _database.UpdateAsync(evento);
         }
 

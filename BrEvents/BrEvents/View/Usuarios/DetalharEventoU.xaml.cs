@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using BrEvents.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Globalization;
+using System.Threading;
 
 namespace BrEvents.View.Usuarios
 {
@@ -15,6 +17,9 @@ namespace BrEvents.View.Usuarios
         public DetalharEventoU()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+
+            
         }
 
         async void EditarEventoUPage(object sender, EventArgs e)
