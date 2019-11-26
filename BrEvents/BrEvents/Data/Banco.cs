@@ -79,6 +79,30 @@ namespace BrEvents.Data
         #endregion
 
 
+        #region "Métodos Usuário"
+        public Task<List<Usuario>> GetUsuariosAsyncc()
+        {
+            return _database.Table<Usuario>().ToListAsync();
+        }
+
+        public Task<int> InserirUsuarioAsync(Usuario usuario)
+        {
+            return _database.InsertAsync(usuario);
+        }
+
+        public Task<int> DeletarUsuarioAsync(Usuario usuario)
+        {
+            return _database.DeleteAsync(usuario);
+        }
+
+        public Task<int> EditarUsuarioAsyncc(Usuario usuario)
+        {
+            return _database.UpdateAsync(usuario);
+        }
+
+
+        #endregion
+
 
 
     }

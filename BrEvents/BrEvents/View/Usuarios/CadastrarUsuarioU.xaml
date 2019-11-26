@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BrEvents.View.Usuarios.CadastrarUsuarioU">
+    <ContentPage.Content>
+      
+            <StackLayout Margin="10">
+                <Label Text="Preencha os dados corretamente..." TextColor="Gray" FontAttributes="Bold" FontSize="Medium"/>
+                <BoxView BackgroundColor="Gray" HeightRequest=".3"/>
+
+                <Label Text="Nome de Usuário"/>
+                <Entry Text="test" x:Name="entUsuario"/>
+
+                <Label Text="Senha"/>
+                <Entry Text="test123" x:Name="entSenha" IsPassword="True"/>
+
+                <Label Text="Nome"/>
+                <Entry Text="Testando" x:Name="entNome"/>
+
+                <Label Text="Sobrenome"/>
+                <Entry Text="Teste" x:Name="entSobrenome"/>
+
+                <Label Text="Email"/>
+                <Entry Text="test@test.com" x:Name="entEmail"/>
+
+                <Label Text="Contato"/>
+                <Entry Text="123456" x:Name="entContato"/>
+
+                <Button Margin="10" Text="Se Inscrever" TextColor="White" Clicked="CadastrarUsuarioBtnClicked"  BackgroundColor="DodgerBlue" CornerRadius="10"/>
+
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
