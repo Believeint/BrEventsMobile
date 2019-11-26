@@ -19,5 +19,15 @@ namespace BrEvents.View
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if(txtCusto.Detail == "0")
+            {
+                txtCusto.Detail = "Evento Gratuito";
+                txtCusto.DetailColor = Color.Red;
+            }
+        }
     }
 }

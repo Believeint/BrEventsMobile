@@ -37,7 +37,7 @@ namespace BrEvents.View.Usuarios
 
 
             await App.DB.InserirEventoAsync(evento);
-            await DisplayAlert("Alerta", "Evento inserido com sucesso", "OK");
+            await DisplayAlert("Alerta", "Evento cadastrado com sucesso", "OK");
             await Navigation.PopAsync();
 
         }

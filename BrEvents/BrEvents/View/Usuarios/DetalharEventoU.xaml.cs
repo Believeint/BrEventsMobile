@@ -22,6 +22,16 @@ namespace BrEvents.View.Usuarios
             
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if(txtCusto.Detail == "0")
+            {
+                txtCusto.Detail = "Evento Gratuito";
+                txtCusto.DetailColor = Color.Red;
+            }
+        }
+
         async void EditarEventoUPage(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditarEventoU() { BindingContext = BindingContext });
@@ -32,6 +42,12 @@ namespace BrEvents.View.Usuarios
             var evento = (Evento)BindingContext;
             await App.DB.DeletarEventoAsync(evento);
             await Navigation.PopAsync();
+        }
+
+        async void SeInscreverEvento(object sender, EventArgs e)
+        {
+            await DisplayAlert("Alerta", "Parabéns, Inscrição Realizada com sucesso", "OK");
+            await Navigation.PopToRootAsync();
         }
     }
 }

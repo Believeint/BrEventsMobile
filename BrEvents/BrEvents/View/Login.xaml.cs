@@ -47,15 +47,37 @@ namespace BrEvents.View
             var usuario = new Usuario() { NomeUsuario = entUsuario.Text, Senha = entSenha.Text };
             if(!string.IsNullOrEmpty(entUsuario.Text) || !string.IsNullOrEmpty(entSenha.Text))
             {
+                List<Usuario> usuarios = await App.DB.GetUsuariosAsync();
+                var u1 = usuarios.Where(x => x.NomeUsuario == usuario.NomeUsuario && x.Senha == usuario.Senha).FirstOrDefault();
 
+                if(u1 != null)
+                {
+                    usuario.Nome = u1.Nome;
+                    App.Current.MainPage = new NavigationPage(new Usuarios.ListarEventosU(usuario.Nome));
+                }
+                else
+                {
+                    await DisplayAlert("Alerta", "Usuario Inexistente/Dados incorretos, Tente novamente", "OK");
+                }
+
+                //for(int i = 0; i > usuarios.Count; i++)
+                //{
+                //    if(usuario.NomeUsuario == usuarios[i][i])
+                //    {
+
+                //    }
+                //}
+                
+            } 
+            else 
+            { 
+                 await DisplayAlert("Alerta", "Preencha os Campos", "OK");
             }
-            
-           
         }
 
         async void SeInscreverPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SeInscrever());
+            await Navigation.PushAsync(new View.Usuarios.CadastrarUsuarioU());
         }
     }
 }

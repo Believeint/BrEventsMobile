@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="BrEvents.View.Usuarios.CadastrarUsuarioU">
     <ContentPage.Content>
-      
+        <ScrollView>
             <StackLayout Margin="10">
                 <Label Text="Preencha os dados corretamente..." TextColor="Gray" FontAttributes="Bold" FontSize="Medium"/>
                 <BoxView BackgroundColor="Gray" HeightRequest=".3"/>
@@ -15,7 +15,7 @@
                 <Entry Text="test" x:Name="entUsuario"/>
 
                 <Label Text="Senha"/>
-                <Entry Text="test123" x:Name="entSenha" IsPassword="True"/>
+                <Entry Text="123" x:Name="entSenha" IsPassword="True"/>
 
                 <Label Text="Nome"/>
                 <Entry Text="Testando" x:Name="entNome"/>
@@ -30,7 +30,8 @@
                 <Entry Text="123456" x:Name="entContato"/>
 
                 <Button Margin="10" Text="Se Inscrever" TextColor="White" Clicked="CadastrarUsuarioBtnClicked"  BackgroundColor="DodgerBlue" CornerRadius="10"/>
-
+            
             </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

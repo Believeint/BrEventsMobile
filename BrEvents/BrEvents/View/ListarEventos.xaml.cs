@@ -45,7 +45,8 @@ namespace BrEvents.View
 
         async void SeInscreverPage(object sender, EventArgs e)
         {
-            await DisplayAlert("Alerta", "Precisa estar logado", "OK");
+            await Navigation.PushAsync(new View.Usuarios.CadastrarUsuarioU());
+            //await DisplayAlert("Alerta", "Precisa estar logado", "OK");
         }
  
        

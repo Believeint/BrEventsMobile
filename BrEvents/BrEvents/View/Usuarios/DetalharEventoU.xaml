@@ -29,8 +29,13 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Text="Editar Evento"  Clicked="EditarEventoUPage" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="5"/>
-                                        <Button Text="Excluir Evento" Clicked="ExcluirEventoUPage" TextColor="White" BackgroundColor="OrangeRed" CornerRadius="5" Grid.Column="1"/>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Button Text="Se Inscrever" Clicked="SeInscreverEvento" TextColor="White" BackgroundColor="CadetBlue" CornerRadius="5" Grid.ColumnSpan="2"/>
+                                        <Button Text="Editar Evento"  Clicked="EditarEventoUPage" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="5" Grid.Row="1"/>
+                                        <Button Text="Excluir Evento" Clicked="ExcluirEventoUPage" TextColor="White" BackgroundColor="OrangeRed" CornerRadius="5" Grid.Row="1" Grid.Column="1"/>
                                     </Grid>
                                 </ViewCell>
                                 </TableSection>

@@ -30,9 +30,9 @@ namespace BrEvents
             Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
             //MainPage = new NavigationPage(new View.Usuarios.CadastrarEventoU());
-            //MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new Login());
             //MainPage = new View.Usuarios.CadastrarUsuarioU();
-            MainPage = new View.Usuarios.ListarUsuariosU();
+            //MainPage = new View.Usuarios.ListarUsuariosU();
      
         }
 

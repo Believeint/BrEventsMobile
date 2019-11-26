@@ -24,10 +24,10 @@
                             </ViewCell>
                             <TextCell Text="Local" Detail="{Binding Local}"/>
                             <TextCell Text="Endereço" Detail="{Binding Endereco}"/>
-                            <TextCell Text="Custo" Detail="{Binding Custo}"/>
+                            <TextCell x:Name="txtCusto" Text="Custo" Detail="{Binding Custo}"/>
                             <TextCell Text="Data Início" Detail="{Binding DataInicio, StringFormat='{0:dd/MMM}'}"/>
                             <TextCell Text="Data Fim" Detail="{Binding DataFim, StringFormat='{0:dd/MMM}'}"/>
-                            <TextCell x:Name="txtMessage" Text="               Precisa estar logado para se inscrever!"/>
+                            <TextCell x:Name="txtMessage" Text="    Precisa estar logado para se inscrever!"/>
                             </TableSection>
                     </TableRoot>
                     

@@ -41,6 +41,7 @@ namespace BrEvents.View.Usuarios
             if (eventos.Count() > 0)
             {
                 lvwUsuarios.ItemsSource = eventos;
+                lblMessage.IsVisible = false;
             }
             else
             {
