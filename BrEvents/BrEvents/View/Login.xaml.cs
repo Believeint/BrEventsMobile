@@ -26,25 +26,31 @@ namespace BrEvents.View
 
         async void WelcomePage(object sender, EventArgs e)
         {
-            var usuario = new Usuario() { Nome = entUsuario.Text, Senha = entSenha.Text };
+            //var usuario = new Usuario() { Nome = entUsuario.Text, Senha = entSenha.Text };
+            //if(!string.IsNullOrEmpty(entUsuario.Text) || !string.IsNullOrEmpty(entSenha.Text))
+            //{
+            //    if(usuario.Nome == "teste" && usuario.Senha == "123")
+            //    {
+            //       //await Navigation.PushAsync(new Usuarios.ListarEventosU(usuario.Nome));
+            //       App.Current.MainPage = new NavigationPage(new Usuarios.ListarEventosU(usuario.Nome));
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert("Alerta", "Usuario Inexistente/Dados incorretos, Tente novamente", "OK");
+            //    }
+            //} 
+            //else
+            //{
+            //    await DisplayAlert("Alerta", "Preencha os Campos", "OK");
+            //} 
+
+            var usuario = new Usuario() { NomeUsuario = entUsuario.Text, Senha = entSenha.Text };
             if(!string.IsNullOrEmpty(entUsuario.Text) || !string.IsNullOrEmpty(entSenha.Text))
             {
-                if(usuario.Nome == "teste" && usuario.Senha == "123")
-                {
-                   //await Navigation.PushAsync(new Usuarios.ListarEventosU(usuario.Nome));
-                   App.Current.MainPage = new NavigationPage(new Usuarios.ListarEventosU(usuario.Nome));
-                }
-                else
-                {
-                    await DisplayAlert("Alerta", "Usuario Inexistente/Dados incorretos, Tente novamente", "OK");
-                }
-            } 
-            else
-            {
-                await DisplayAlert("Alerta", "Preencha os Campos", "OK");
-            } 
+
+            }
             
-            //Navigation.PushAsync(new View.Usuario.ListarEventosU(usuario));
+           
         }
 
         async void SeInscreverPage(object sender, EventArgs e)

@@ -31,7 +31,8 @@ namespace BrEvents
 
             //MainPage = new NavigationPage(new View.Usuarios.CadastrarEventoU());
             //MainPage = new NavigationPage(new Login());
-            MainPage = new View.Usuarios.CadastrarUsuarioU();
+            //MainPage = new View.Usuarios.CadastrarUsuarioU();
+            MainPage = new View.Usuarios.ListarUsuariosU();
      
         }
 

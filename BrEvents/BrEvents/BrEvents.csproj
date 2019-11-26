@@ -48,5 +48,8 @@
     <EmbeddedResource Update="View\Usuarios\ListarEventosU.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="View\Usuarios\ListarUsuariosU.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
