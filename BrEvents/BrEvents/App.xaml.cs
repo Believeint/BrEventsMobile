@@ -12,9 +12,13 @@ namespace BrEvents
 
     public partial class App : Application
     {
+        // VARIÁVEL ESTÁTICA ONDE FICARÁ ARMAZENADO A INSTÂNCIA DA CONEXÃO
         static Banco banco;
+
+        // METODO ACESSOR DA VARIÁVEL banco
         public static Banco DB
         {
+            // CRIAÇÃO DO BANCO banco.db3, RETORNA SE JÁ EXISTIR 
             get
             {
                 if(banco == null)
@@ -27,12 +31,12 @@ namespace BrEvents
         public App()
         {
             InitializeComponent();
+            // SETA HORARIO E DATA PARA PORTUGUÊS BRASIL
             Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
-            //MainPage = new NavigationPage(new View.Usuarios.CadastrarEventoU());
+            // REDIRECIONA PARA A PAGINA DE LOGIN
             MainPage = new NavigationPage(new Login());
-            //MainPage = new View.Usuarios.CadastrarUsuarioU();
-            //MainPage = new View.Usuarios.ListarUsuariosU();
+
      
         }
 
